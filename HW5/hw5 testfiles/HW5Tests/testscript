@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in {1..80}
+do
+   make test="test_"$i full
+done

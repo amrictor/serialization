@@ -1,0 +1,80 @@
+case01	short	5						
+"s" "\x05"
+case02	bool	true						
+"t"
+case03	bool	false						
+"f"
+case04	short	-12						
+"s" "\x1f\xf4"
+case05	short	32767						
+"s" "\x20\x7f\xff"
+case06	short	-32768						
+"s" "\x2f\x80\x0"s
+case07	short	0						
+"s" "\x0"s
+case08	int	2147483647					
+"i" "\x40\x7f\xff\xff\xff"
+case09	int	-2147483648					
+"i" "\x4f\x80\x0\x0\x0"s
+case10	int	32768						
+"i" "\x20\x80\x0"s
+case11	int	-32769						
+"i" "\x2f\x7f\xff"
+case12	int	111222333					
+"i" "\x36\xa1\x1e\3d"
+case13	long	9223372036854775807				
+"l" "\x80\x7f\xff\xff\xff\xff\xff\xff\xff"
+case14	long	-9223372036854775808				
+"l" "\x8f\x80\x0\x0\x0\x0\x0\x0\x0"s
+case15	long	1222333444555					
+"l" "\x51\x1c\x98\xc0\x31\xcb"
+case16	char	' '						
+"c" "\x20"
+case17	char	'	'					
+"c" "\x09"
+case18	char	'^'						
+"c" "\x5e"
+case19	string	"TESTING string1."				
+"S" "\x10\x10" "TESTING string1."
+case20	string	"TESTING string with tab	."		
+"S" "\x10\x19" "TESTTING string with tab	."
+case21	bool	"f" "s"s "\x05"					
+0
+case22	short							
+5
+case23	bool	"t" "s"s "\x1f\xf4"				
+1
+case24	short							
+-12
+case25	short	"s"s "\x20\x7f\xff"				
+32767
+case26	short 	"s" "\x2f\x80\x0"s				
+-32768
+case27	short	"s" "\x0"s					
+0
+case28	int	"i" "\x40\x7f\xff\xff\xff"			
+2147483647
+case29	int	"i" "\x4f\x80\x0\x0\x0"s			
+-2147483648
+case30	int	"i" "\x20\x80\x0"s				
+32768
+case31	int	"i" "\x2f\x7f\xff"				
+-32769
+case32	int	"i" "\x37\x5b\xcd\x15"				
+123456789
+case33	long	"l" "\x80\x7f\xff\xff\xff\xff\xff\xff\xff"	
+9223372036854775807
+case34	long	"l" "\x8f\x80\x0\x0\x0\x0\x0\x0\x0"s		
+-9223372036854775808
+case35	long	"l" "\x8f\xf2\x1f\xae\x74\x50\x49\x11\xcc"	
+-999888777666555444
+case36	char	"c" "\x7e"					
+'~'
+case37	char	"c" "\x7c"					
+'|'
+case38	char	"c" "\x2f"					
+'/'
+case39	string	"S" "\x05" "test."				
+"test."
+case40	string	"S" "\x10\x19" "testing STRING with tab	."	
+"testing STRING with tab	."

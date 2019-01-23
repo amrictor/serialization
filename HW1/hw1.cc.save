@@ -1,0 +1,24 @@
+#include <iomanip>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int vnum;
+ 	int nibble=0;
+	cout << "Enter a number: ";
+	cin >> vnum;
+	cout << "Your number was "  << vnum << '\n';
+	int i = vnum;
+	while(){
+		cout << i << '\n';
+		nibble++;
+	}	
+	cout << "nibble: " <<  nibble << '\n';
+	int final = vnum | (nibble << (8*nibble + 4));
+	cout << "decimal: "  << dec << final << '\n'
+ << "hex: " << hex << setw(2) << setfill('0') << (final & 0xff) << '\n';
+    	cout << dec << vnum << ": " << hex << setw(2) << setfill('0') << 
+	(final & 0xff) << '\n';
+	return 0;
+}

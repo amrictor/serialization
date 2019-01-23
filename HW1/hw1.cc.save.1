@@ -1,0 +1,57 @@
+#include <bitset>
+#include <iomanip>
+#include <iostream>
+#include <cmath>
+using namespace std;
+int countBits(int input){
+    int i = input;
+    int numBits = 0;
+    while(i!=0){
+        i=i/2;
+        numBits++;
+    }
+    return numBits;
+}
+int countHex(int input){
+    int i = input;
+    int numHex = 0;
+    while(i!=0){
+	i=i/pow(2,4);
+	numHex++;
+    }
+    return numHex;
+}
+int countBytes(int input){
+    int i = input;
+    int numBytes = 0;
+    while(i!=0){
+        i=i/pow(2,8);
+        numBytes++;
+    }
+    return numBytes;
+}
+
+int serialize(){
+    while(!cin.eof()){
+        int input;
+        cin >> input;
+        int nibble = countBytes(input)-1;
+	//int width = countBytes(input)*2;
+	int numBits = countBits(input);
+        int mask = pow(2,numBits+(4-numBits%4)) - 1;
+	cout << bitset<64>(input) << '\n';
+	cout << bitset<64>(mask) << '\n';
+	cout << bitset<64>(mask&input)<<'\n';
+        cout << bitset<64>(nibble <<((8*nibble)+4))<<'\n';
+	int final = (input & mask) | (nibble << 8*nibble + 4);
+        cout << bitset<64>(final) << '\n';
+	cout << dec << input << ": " << hex << setw(2)
+	 << setfill('0') << final << '\n';
+    }
+    return 0;
+}
+
+int main(){
+    serialize();
+    return 0;
+}
